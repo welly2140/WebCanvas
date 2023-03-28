@@ -1,0 +1,48 @@
+.canvas{
+  flex: 1;
+  overflow: hidden;
+}
+.canvas canvas{
+  width: 100%;
+  height: 100%;
+}
+.web_page{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1350px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #d5c1c0;
+}
+.setting{
+  width: 295px;
+  padding: 15px 22px 0;
+}
+.setting_buttons{
+  border: none;
+  width:65px;
+  height:65px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.row .options .option{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.option #size-slider{
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}

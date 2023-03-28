@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="web_page">
+      <section class="canvas" style="background: white; border-radius: 40px; margin-right: 20px;">
+        <canvas></canvas>
+      </section>
+      <section class="setting" style="background: #ede7e8; border-radius: 40px;">
+        <div>
+          <div style="display: inline-block">
+              <canvas id="platter" width="200px" height="200px" style="border-radius: 40px;"></canvas>
+              <canvas id="global" style="position: absolute;visibility: hidden" width="10px" height="10px"></canvas>
+              <canvas id="colorBar" width="40px" height="200px" style="border-radius: 40px;"></canvas>
+          </div>
+        </div>
+        <div>
+          <select name="word_type" id="word_type">
+            <option value="helvetica neue">Helvetica Neue</option>
+            <option value="helvetica">Helvetica</option>
+            <option value="arial">Arial</option>
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="fantasy">fantasy</option>
+            <option value="monospace">monospace</option>
+            <option value="DFKai-sb">標楷體</option>
+            <option value="PMingLiU">新細明體</option>
+            <option value="Microsoft JhengHei">微軟正黑體</option>
+          </select>
+          <select name="word_size" id="word_size">
+            <option value="10px">10</option>
+            <option value="12px">12</option>
+            <option value="14px">14</option>
+            <option value="16px">16</option>
+            <option value="20px">20</option>
+            <option value="24px">24</option>
+            <option value="32px">32</option>
+            <option value="48px">48</option>
+            <option value="64px">64</option>
+            <option value="72px">72</option>
+        </select>
+        </div>
+      <div>
+          <div>
+              <span id="platterTextId"></span>
+          </div>
+          <div>
+              <span id="colorBarTextId"></span>
+          </div>
+      </div>
+        <div class="row colors">
+          <ul class="options">
+            <li class="option selected"></li>
+            <li class="option">
+              <div id="color-picker">
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul class="options">
+            <li class="option">
+              <img src="UI/paint_ui/mouse_pen.png" alt="" style="width: 20px; height: 20px; margin-right: 10px;">
+              <input type="range" id="size-slider" min="1" max="30" value="5">
+            </li>
+            <li class="option active tool" id="brush" style="display: inline;">
+              <input type="image" src="UI/paint_ui/pen.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="eraser" style="display: inline;">
+              <input type="image" src="UI/paint_ui/eraser.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="line" style="display: inline;">
+              <input type="image" src="UI/paint_ui/line.png" class="setting_buttons"/>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul class="options">
+            <li class="option tool" id="circle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/circle.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="rectangle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/rectangle.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="triangle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/triangle.png" class="setting_buttons"/>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul class="options">
+            <li class="option tool" id="full_circle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/full_circle.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="full_rectangle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/full_rectangle.png" style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="option tool" id="full_triangle" style="display: inline;">
+              <input type="image" src="UI/paint_ui/full_triangle.png" class="setting_buttons"/>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul class="options">
+            <li class="option tool" id="text" style="display: inline;">
+              <input type="image" src="UI/paint_ui/text.png" style="margin-right: 10px;" class="setting_buttons"/> 
+            </li>
+            <li style="display: inline;">
+              <input type="image" src="UI/paint_ui/undo.png" style="margin-right: 10px;" class="setting_buttons" onclick="cUndo()"/> 
+            </li>
+            <li style="display: inline;">
+              <input type="image" src="UI/paint_ui/redo.png" class="setting_buttons" onclick="cRedo()"/>
+            </li>
+          </ul>
+        </div>
+        <div class="row buttons">
+          <ul class="options">
+            <li class="save-img" style="display: inline;">
+              <input type="image" src="UI/paint_ui/download.png"  style="margin-right: 10px;" class="setting_buttons"/>
+            </li>
+            <li class="image_input" style="display: inline;">
+              <label class="btn btn-info">
+                <input type="file" style="display:none;">
+                <img src="UI/paint_ui/upload.png" style="margin-right: 10px;" class="setting_buttons">
+                </label>  
+            </li>
+            <li class="clear-canvas" style="display: inline;">
+              <input type="image" src="UI/paint_ui/refresh.png" class="setting_buttons"/>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
